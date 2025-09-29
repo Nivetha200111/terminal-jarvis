@@ -6,6 +6,12 @@ A fully local, personal LLM that runs offline using `llama.cpp` models (`.gguf`)
 - 🖥️ **Desktop GUI** - Transparent, always-on-top, minimizable desktop app
 - 💻 **Terminal CLI** - Command-line interface for terminal users
 
+**🚀 NEW: Advanced llama.cpp Integration**
+- **Native llama.cpp support** for optimal performance
+- **Hugging Face integration** - Load models directly from HF
+- **GPU acceleration** with full CUDA/OpenCL support
+- **REST API compatibility** for external integrations
+
 Works on Windows PowerShell (also macOS/Linux). No cloud required.
 
 ## Features
@@ -27,7 +33,31 @@ Works on Windows PowerShell (also macOS/Linux). No cloud required.
 - Configurable model, context window, GPU layers
 - Saves conversation transcripts locally
 
-## Quickstart (Windows PowerShell)
+## 🚀 Quick Start
+
+### **Advanced Version (Recommended)**
+```bash
+# Clone and setup
+git clone https://github.com/Nivetha200111/terminal-jarvis.git
+cd terminal-jarvis
+
+# Install llama.cpp for advanced features
+python install_llama_cpp.py
+
+# Launch advanced version
+python launch_advanced.py
+```
+
+### **Standard Version**
+```powershell
+# Windows PowerShell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python launch_desktop.py
+```
+
+## Detailed Setup
 
 1) Install Python 3.10+ and pip.
 
