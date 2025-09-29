@@ -9,9 +9,9 @@ Write-Host ""
 $pythonCheck = Get-Command python -ErrorAction SilentlyContinue
 if ($pythonCheck) {
     $pythonVersion = python --version 2>&1
-    Write-Host "✓ Python found: $pythonVersion" -ForegroundColor Green
+    Write-Host "[OK] Python found: $pythonVersion" -ForegroundColor Green
 } else {
-    Write-Host "✗ Python not found. Please install Python 3.8+ from https://python.org" -ForegroundColor Red
+    Write-Host "[ERROR] Python not found. Please install Python 3.8+ from https://python.org" -ForegroundColor Red
     exit 1
 }
 
@@ -28,11 +28,10 @@ Write-Host "Activating virtual environment..." -ForegroundColor Yellow
 # Install dependencies
 Write-Host "Installing dependencies..." -ForegroundColor Yellow
 pip install --upgrade pip
-pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
-pip install rich prompt-toolkit click pyyaml
+pip install -r requirements.txt
 
 Write-Host ""
-Write-Host "✓ Setup complete!" -ForegroundColor Green
+Write-Host "[SUCCESS] Setup complete!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Cyan
 Write-Host "1. Download a GGUF model from Hugging Face (e.g., TheBloke/Llama-2-7B-GGUF)"
